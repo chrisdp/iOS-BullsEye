@@ -41,9 +41,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showAlert() {
+        // caculate the difference of the current silder value and the target value useing abs "absolute Value"
+        let difference = abs(currentValue - targetValue)
+        
         // setting up and showing alert when hit me is pressed
         let message = "The value of the slider is: \(currentValue)" +
-                        "\nThe target value is: \(targetValue)"
+                        "\nThe target value is: \(targetValue)" +
+                        "\nThe difference is: \(difference)"
         let alert = UIAlertController(title: "Current Value", message: message, preferredStyle: .Alert)
         let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
         
@@ -51,6 +55,7 @@ class ViewController: UIViewController {
         presentViewController(alert, animated: true, completion: nil)
         
         startNewRound()
+        updateLabels()
         
     }
     
