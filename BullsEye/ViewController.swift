@@ -12,10 +12,14 @@ class ViewController: UIViewController {
     // game vars
     var currentValue: Int = 0
     var targetValue: Int = 0
+    var score: Int = 0
+    var round: Int = 0
     
     // UI references
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var lblTarget: UILabel!
+    @IBOutlet weak var lblScore: UILabel!
+    @IBOutlet weak var lblRound: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +42,26 @@ class ViewController: UIViewController {
     
     func updateLabels() {
         lblTarget.text = String(targetValue)
+        lblScore.text = String(score)
+        lblRound.text = String(round)
     }
     
     @IBAction func showAlert() {
         // caculate the difference of the current silder value and the target value useing abs "absolute Value"
         let difference = abs(currentValue - targetValue)
+        let points = 100 - difference
+        
+        score += points
+        round++
         
         // setting up and showing alert when hit me is pressed
-        let message = "The value of the slider is: \(currentValue)" +
+        let message = "You scored \(points) points"
+            
+            /*+
+                        "The value of the slider is: \(currentValue)" +
                         "\nThe target value is: \(targetValue)" +
-                        "\nThe difference is: \(difference)"
+                        "\nThe difference is: \(difference)" */
+        
         let alert = UIAlertController(title: "Current Value", message: message, preferredStyle: .Alert)
         let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
         

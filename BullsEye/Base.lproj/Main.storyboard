@@ -90,7 +90,9 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="lblTarget" destination="CwI-Vg-NKt" id="59Z-Dz-J78"/>
+                        <outlet property="lblRound" destination="tyE-F0-1nV" id="oWF-ee-4Kl"/>
+                        <outlet property="lblScore" destination="5b9-AT-27p" id="Ep2-VE-my3"/>
+                        <outlet property="lblTarget" destination="CwI-Vg-NKt" id="DWN-X0-7SL"/>
                         <outlet property="slider" destination="21o-fe-8E1" id="4Z9-zw-7ZZ"/>
                     </connections>
                 </viewController>
