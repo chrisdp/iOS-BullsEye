@@ -23,13 +23,24 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        startNewRound()
+        startNewGame()
         updateLabels()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func startOver() {
+        startNewGame()
+        updateLabels()
+    }
+    
+    func startNewGame() {
+        score = 0
+        round = 0
+        startNewRound()
     }
     
     func startNewRound() {
@@ -52,6 +63,7 @@ class ViewController: UIViewController {
         var points = 100 - difference
         var title: String
         
+        print(difference)
         if difference == 0 {
             title = "Perfect!"
             points += 100
