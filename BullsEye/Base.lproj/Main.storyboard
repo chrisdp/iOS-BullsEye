@@ -90,6 +90,7 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="lblTarget" destination="zUC-Zb-WrW" id="zvx-Yq-wNc"/>
                         <outlet property="slider" destination="21o-fe-8E1" id="4Z9-zw-7ZZ"/>
                     </connections>
                 </viewController>
