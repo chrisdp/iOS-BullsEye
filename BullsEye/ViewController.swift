@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController {
     // game vars
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblTarget: UILabel!
     @IBOutlet weak var lblScore: UILabel!
     @IBOutlet weak var lblRound: UILabel!
+    @IBOutlet weak var buttontest: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +55,12 @@ class ViewController: UIViewController {
     @IBAction func startOver() {
         startNewGame()
         updateLabels()
+        
+        let transition = CATransition()
+        transition.type = kCATransitionFade
+        transition.duration = 1
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        view.layer.addAnimation(transition, forKey: nil)
     }
     
     func startNewGame() {
